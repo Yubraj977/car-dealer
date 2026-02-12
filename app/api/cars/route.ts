@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { getCars, saveCars } from "@/lib/data";
 import type { Car } from "@/lib/types";
 
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin123";
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "yubraj";
+
 
 function isAuthorized(req: NextRequest): boolean {
   const auth = req.headers.get("authorization");

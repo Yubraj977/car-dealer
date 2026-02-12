@@ -14,12 +14,12 @@ export default function Footer() {
                 <Car size={24} className="text-white" />
               </div>
               <div>
-                <span className="text-xl font-bold tracking-tight">PRESTIGE</span>
-                <span className="text-xl font-light text-slate-400 ml-1">MOTORS</span>
+                <span className="text-xl font-bold tracking-tight">THE AUTO</span>
+                <span className="text-xl font-light text-slate-400 ml-1">ROOM</span>
               </div>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Your premier destination for luxury and performance vehicles. We&apos;ve been connecting discerning buyers with exceptional automobiles since 2005.
+              The car buying experience should feel straightforward, respectful, and transparent. We focus on doing things the right way — one customer and one car at a time.
             </p>
             <div className="flex items-center gap-3">
               {[Facebook, Instagram, Twitter, Youtube].map((Icon, i) => (
@@ -40,11 +40,11 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { href: "/inventory", label: "Browse Inventory" },
+                { href: "/find-my-car", label: "Find My Car" },
                 { href: "/finance", label: "Financing Options" },
                 { href: "/about", label: "About Us" },
                 { href: "/contact", label: "Contact Us" },
                 { href: "/inventory?condition=certified", label: "Certified Pre-Owned" },
-                { href: "/inventory?condition=new", label: "New Arrivals" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-slate-400 hover:text-accent-light text-sm transition-colors">
@@ -75,25 +75,25 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-accent-light mt-0.5 shrink-0" />
-                <span className="text-slate-400 text-sm">123 Premium Auto Blvd<br />Beverly Hills, CA 90210</span>
+                <span className="text-slate-400 text-sm">1066 Gravel Rd, Suite 14<br />Webster, NY</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-accent-light shrink-0" />
-                <a href="tel:+15551234567" className="text-slate-400 hover:text-accent-light text-sm transition-colors">
-                  (555) 123-4567
+                <a href="tel:+15852368019" className="text-slate-400 hover:text-accent-light text-sm transition-colors">
+                  (585) 236-8019
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-accent-light shrink-0" />
-                <a href="mailto:info@prestigemotors.com" className="text-slate-400 hover:text-accent-light text-sm transition-colors">
-                  info@prestigemotors.com
+                <a href="mailto:info@theautoroomny.com" className="text-slate-400 hover:text-accent-light text-sm transition-colors">
+                  info@theautoroomny.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Clock size={18} className="text-accent-light mt-0.5 shrink-0" />
                 <div className="text-slate-400 text-sm">
-                  <p>Mon - Sat: 9:00 AM - 8:00 PM</p>
-                  <p>Sunday: 10:00 AM - 6:00 PM</p>
+                  <p>By Appointment</p>
+                  <p>&amp; Walk-Ins Welcome</p>
                 </div>
               </li>
             </ul>
@@ -104,7 +104,7 @@ export default function Footer() {
         <div className="border-t border-white/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-slate-500 text-sm">
-              &copy; {new Date().getFullYear()} Prestige Motors. All rights reserved.
+              &copy; {new Date().getFullYear()} The Auto Room. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               {["Privacy Policy", "Terms of Service", "Sitemap"].map((item) => (

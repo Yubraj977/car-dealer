@@ -15,10 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Prestige Motors | Premium Luxury Car Dealership",
+  title: "The Auto Room | Used Cars & Car Finder Service | Webster, NY",
   description:
-    "Discover premium luxury vehicles at Prestige Motors. Browse our curated collection of Mercedes-Benz, BMW, Porsche, Ferrari, and more. #1 rated luxury dealer in California.",
-  keywords: "luxury cars, premium vehicles, car dealership, Mercedes-Benz, BMW, Porsche, Ferrari, Beverly Hills",
+    "The Auto Room in Webster, NY — honest pricing, carefully selected vehicles, and a car finder concierge service. We help you find any used car, anywhere.",
+  keywords: "used cars, car finder, car dealership, Webster NY, The Auto Room, find my car, used vehicles",
 };
 
 export default function RootLayout({

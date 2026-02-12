@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Phone, Car, ChevronDown } from "lucide-react";
+import { Menu, X, Phone, Car, Search } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/inventory", label: "Inventory" },
+  { href: "/find-my-car", label: "Find My Car" },
   { href: "/finance", label: "Financing" },
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
@@ -28,17 +29,15 @@ export default function Navbar() {
       <div className="bg-primary text-white text-sm hidden lg:block">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-10">
           <div className="flex items-center gap-6">
-            <span className="text-slate-300">Mon - Sat: 9:00 AM - 8:00 PM</span>
-            <span className="text-slate-500">|</span>
-            <span className="text-slate-300">Sunday: 10:00 AM - 6:00 PM</span>
+            <span className="text-slate-300">By Appointment &amp; Walk-Ins Welcome</span>
           </div>
           <div className="flex items-center gap-6">
-            <a href="tel:+15551234567" className="flex items-center gap-1.5 text-accent-light hover:text-accent transition-colors">
+            <a href="tel:+15852368019" className="flex items-center gap-1.5 text-accent-light hover:text-accent transition-colors">
               <Phone size={14} />
-              (555) 123-4567
+              (585) 236-8019
             </a>
             <span className="text-slate-500">|</span>
-            <span className="text-slate-300">123 Premium Auto Blvd, Beverly Hills, CA</span>
+            <span className="text-slate-300">1066 Gravel Rd, Suite 14, Webster, NY</span>
           </div>
         </div>
       </div>
@@ -59,9 +58,9 @@ export default function Navbar() {
                 <Car size={24} className="text-white" />
               </div>
               <div>
-                <span className="text-xl font-bold text-primary tracking-tight">PRESTIGE</span>
-                <span className="text-xl font-light text-muted ml-1">MOTORS</span>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-muted -mt-0.5">Premium Auto Dealership</p>
+                <span className="text-xl font-bold text-primary tracking-tight">THE AUTO</span>
+                <span className="text-xl font-light text-muted ml-1">ROOM</span>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-muted -mt-0.5">Webster, NY</p>
               </div>
             </Link>
 
@@ -81,17 +80,18 @@ export default function Navbar() {
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center gap-3">
               <a
-                href="tel:+15551234567"
+                href="tel:+15852368019"
                 className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-primary border border-slate-200 rounded-xl hover:border-primary/20 hover:bg-slate-50 transition-all"
               >
                 <Phone size={16} />
                 Call Us
               </a>
               <Link
-                href="/inventory"
-                className="btn-shimmer px-6 py-2.5 bg-gradient-to-r from-accent to-accent-light text-white text-sm font-semibold rounded-xl shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all"
+                href="/find-my-car"
+                className="btn-shimmer flex items-center gap-1.5 px-6 py-2.5 bg-gradient-to-r from-accent to-accent-light text-white text-sm font-semibold rounded-xl shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all"
               >
-                Browse Cars
+                <Search size={15} />
+                Find My Car
               </Link>
             </div>
 
@@ -125,18 +125,19 @@ export default function Navbar() {
             ))}
             <div className="pt-3 space-y-2">
               <a
-                href="tel:+15551234567"
+                href="tel:+15852368019"
                 className="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-medium text-primary border border-slate-200 rounded-xl"
               >
                 <Phone size={16} />
-                (555) 123-4567
+                (585) 236-8019
               </a>
               <Link
-                href="/inventory"
+                href="/find-my-car"
                 onClick={() => setIsOpen(false)}
-                className="block text-center w-full px-4 py-3 bg-gradient-to-r from-accent to-accent-light text-white text-sm font-semibold rounded-xl"
+                className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-gradient-to-r from-accent to-accent-light text-white text-sm font-semibold rounded-xl"
               >
-                Browse Inventory
+                <Search size={16} />
+                Find My Car
               </Link>
             </div>
           </div>

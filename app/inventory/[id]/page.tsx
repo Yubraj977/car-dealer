@@ -184,11 +184,11 @@ export default function VehicleDetailPage() {
                   Schedule Test Drive
                 </button>
                 <a
-                  href="tel:+15551234567"
+                  href="tel:+15852368019"
                   className="w-full flex items-center justify-center gap-2 py-4 border border-slate-200 text-primary font-semibold rounded-xl hover:bg-slate-50 transition-colors"
                 >
                   <Phone size={18} />
-                  Call (555) 123-4567
+                  Call (585) 236-8019
                 </a>
                 <button className="w-full flex items-center justify-center gap-2 py-4 border border-slate-200 text-primary font-semibold rounded-xl hover:bg-slate-50 transition-colors">
                   <Mail size={18} />
@@ -211,15 +211,15 @@ export default function VehicleDetailPage() {
 
             {/* Dealer Info */}
             <div className="bg-white rounded-2xl p-6 border border-slate-100">
-              <h3 className="font-semibold text-primary mb-4">Prestige Motors</h3>
+              <h3 className="font-semibold text-primary mb-4">The Auto Room</h3>
               <div className="space-y-3 text-sm text-muted">
                 <div className="flex items-center gap-2">
                   <MapPin size={14} className="text-accent shrink-0" />
-                  123 Premium Auto Blvd, Beverly Hills, CA
+                  1066 Gravel Rd, Suite 14, Webster, NY
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock size={14} className="text-accent shrink-0" />
-                  Open today: 9:00 AM - 8:00 PM
+                  By Appointment &amp; Walk-Ins Welcome
                 </div>
               </div>
             </div>

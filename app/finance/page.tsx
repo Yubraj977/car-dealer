@@ -13,6 +13,7 @@ import {
   FileText,
   BadgeCheck,
   Banknote,
+  Phone,
 } from "lucide-react";
 import { formatPrice } from "@/lib/data";
 
@@ -314,11 +315,11 @@ export default function FinancePage() {
               Contact Finance Team <ArrowRight size={18} />
             </Link>
             <a
-              href="tel:+15551234567"
+              href="tel:+15852368019"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-semibold rounded-2xl border border-slate-200 hover:bg-slate-50 transition-all"
             >
               <Phone size={18} />
-              (555) 123-4567
+              (585) 236-8019
             </a>
           </div>
         </div>

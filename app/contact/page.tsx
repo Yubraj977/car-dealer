@@ -39,10 +39,10 @@ export default function ContactPage() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { icon: Phone, label: "Call Us", value: "(555) 123-4567", href: "tel:+15551234567" },
-              { icon: Mail, label: "Email Us", value: "info@prestigemotors.com", href: "mailto:info@prestigemotors.com" },
-              { icon: MapPin, label: "Visit Us", value: "123 Premium Auto Blvd, Beverly Hills, CA", href: "#" },
-              { icon: Clock, label: "Hours", value: "Mon-Sat: 9AM-8PM, Sun: 10AM-6PM", href: "#" },
+              { icon: Phone, label: "Call Us", value: "(585) 236-8019", href: "tel:+15852368019" },
+              { icon: Mail, label: "Email Us", value: "info@theautoroomny.com", href: "mailto:info@theautoroomny.com" },
+              { icon: MapPin, label: "Visit Us", value: "1066 Gravel Rd, Suite 14, Webster, NY", href: "#" },
+              { icon: Clock, label: "Hours", value: "By Appointment & Walk-Ins Welcome", href: "#" },
             ].map(({ icon: Icon, label, value, href }) => (
               <a
                 key={label}
@@ -174,7 +174,7 @@ export default function ContactPage() {
               {/* Map placeholder */}
               <div className="bg-slate-200 rounded-3xl overflow-hidden aspect-[4/3] relative">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26430.393553120906!2d-118.43209796470972!3d34.07362429035497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04d6d147ab%3A0xd6c7c379fd081ed1!2sBeverly%20Hills%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.5!2d-77.4258!3d43.2121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDEyJzQzLjYiTiA3N8KwMjUnMzMuMCJX!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

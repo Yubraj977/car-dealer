@@ -4,8 +4,8 @@ import { CheckCircle2, Award, Users, Clock, Shield } from "lucide-react";
 const reasons = [
   {
     icon: Award,
-    title: "Award-Winning Dealer",
-    description: "Voted #1 luxury dealership in California for 5 consecutive years.",
+    title: "Honest Pricing",
+    description: "Straightforward, transparent pricing with no hidden fees or surprises.",
   },
   {
     icon: Shield,
@@ -14,13 +14,13 @@ const reasons = [
   },
   {
     icon: Users,
-    title: "Expert Consultants",
-    description: "Our certified auto advisors have 10+ years of luxury market experience.",
+    title: "Small, Hands-On Team",
+    description: "You work directly with people who care about the experience, not just the transaction.",
   },
   {
     icon: Clock,
-    title: "Lifetime Support",
-    description: "Complimentary maintenance reminders, 24/7 roadside assistance, and priority service.",
+    title: "Car Finder Service",
+    description: "Can't find what you want? Tell us and we'll track it down from anywhere in the country.",
   },
 ];
 
@@ -50,7 +50,7 @@ export default function WhyChooseUs() {
                   <p className="text-muted text-xs">of Excellence</p>
                 </div>
               </div>
-              <p className="text-muted text-xs">Trusted by over 15,000 satisfied customers nationwide.</p>
+              <p className="text-muted text-xs">Trusted by customers across New York.</p>
             </div>
             {/* Decorative */}
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-accent/10 rounded-2xl -z-10" />
@@ -58,12 +58,12 @@ export default function WhyChooseUs() {
 
           {/* Right - Content */}
           <div>
-            <span className="text-accent text-sm font-semibold uppercase tracking-wider">Why Prestige Motors</span>
+            <span className="text-accent text-sm font-semibold uppercase tracking-wider">Why The Auto Room</span>
             <h2 className="text-4xl md:text-5xl font-bold text-primary mt-3 mb-6">
-              The Prestige Difference
+              The Auto Room Difference
             </h2>
             <p className="text-muted text-lg leading-relaxed mb-10">
-              We&apos;re not just selling cars — we&apos;re crafting experiences. Every interaction is designed to exceed your expectations, from your first visit to years after your purchase.
+              Buying a car should feel straightforward, comfortable, and enjoyable. We focus on honest pricing, carefully selected vehicles, and a better overall experience.
             </p>
 
             {/* Reasons Grid */}

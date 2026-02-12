@@ -3,10 +3,10 @@ import Link from "next/link";
 import { Award, Users, ShieldCheck, Clock, Star, CheckCircle2, ArrowRight, Target, Gem, Heart } from "lucide-react";
 
 const stats = [
-  { value: "20+", label: "Years of Excellence", icon: Clock },
-  { value: "15K+", label: "Happy Customers", icon: Users },
-  { value: "500+", label: "Premium Vehicles", icon: Award },
-  { value: "98%", label: "Client Satisfaction", icon: Star },
+  { value: "Curated", label: "Vehicle Selection", icon: Award },
+  { value: "Honest", label: "Transparent Pricing", icon: ShieldCheck },
+  { value: "Personal", label: "Hands-On Service", icon: Users },
+  { value: "Free", label: "Car Finder Service", icon: Star },
 ];
 
 const values = [
@@ -18,7 +18,7 @@ const values = [
   {
     icon: Gem,
     title: "Uncompromising Quality",
-    description: "Every vehicle undergoes our rigorous 150-point inspection. We only sell cars we'd proudly drive ourselves.",
+    description: "Each vehicle is carefully selected and evaluated. We only sell cars we'd proudly drive ourselves.",
   },
   {
     icon: Heart,
@@ -43,10 +43,10 @@ export default function AboutPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <span className="text-accent-light text-sm font-semibold uppercase tracking-wider">About Us</span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mt-4 mb-6">
-            Redefining the Car<br />Buying Experience
+            A Better Way to<br />Buy a Car
           </h1>
           <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
-            Since 2005, Prestige Motors has been the premier destination for discerning automotive enthusiasts seeking exceptional vehicles and unparalleled service.
+            The Auto Room was created with a simple idea: the car buying experience should feel straightforward, respectful, and transparent. We focus on doing things the right way.
           </p>
         </div>
       </section>
@@ -80,24 +80,24 @@ export default function AboutPage() {
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-accent text-white rounded-2xl p-6 shadow-xl">
-                <p className="text-3xl font-bold">20+</p>
-                <p className="text-sm opacity-90">Years of Trust</p>
+                <p className="text-3xl font-bold">New</p>
+                <p className="text-sm opacity-90">Now Open</p>
               </div>
             </div>
             <div>
               <span className="text-accent text-sm font-semibold uppercase tracking-wider">Our Story</span>
               <h2 className="text-4xl font-bold text-primary mt-3 mb-6">
-                A Legacy Built on Passion
+                Built on a Simple Idea
               </h2>
               <div className="space-y-4 text-muted leading-relaxed">
                 <p>
-                  What started as a small boutique dealership in Beverly Hills has grown into one of California&apos;s most respected luxury automotive destinations. Our founder, Robert Kensington, had a vision: to create a car buying experience as refined as the vehicles themselves.
+                  The Auto Room was created with a simple idea: the car buying experience should feel straightforward, respectful, and transparent. We focus on doing things the right way — one customer and one car at a time.
                 </p>
                 <p>
-                  Today, Prestige Motors curates a collection of over 500 premium vehicles from the world&apos;s most prestigious brands. Every car in our inventory is hand-selected, thoroughly inspected, and presented to the highest standards.
+                  Our inventory is intentionally curated. Each vehicle is carefully selected, evaluated, and offered with the same level of care regardless of price. We don&apos;t just sell what&apos;s on the lot — if you can&apos;t find what you want, we&apos;ll find it for you.
                 </p>
                 <p>
-                  Our commitment goes beyond the sale. We build lasting relationships with our clients, providing comprehensive after-sales support, exclusive events, and a level of service that sets the benchmark in the industry.
+                  We&apos;re a small, hands-on team that values honesty and clear communication. You&apos;ll work directly with people who care about the experience, not just the transaction. Located at 1066 Gravel Rd, Suite 14 in Webster, NY.
                 </p>
               </div>
             </div>
@@ -133,7 +133,7 @@ export default function AboutPage() {
             <span className="text-accent text-sm font-semibold uppercase tracking-wider">Our Team</span>
             <h2 className="text-4xl font-bold text-primary mt-3">Meet the Experts</h2>
             <p className="text-muted mt-4 max-w-xl mx-auto">
-              Our team of certified professionals brings decades of combined experience in the luxury automotive industry.
+              We&apos;re a small, hands-on team that values honesty and clear communication.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -159,10 +159,10 @@ export default function AboutPage() {
       <section className="py-20 bg-gradient-to-br from-primary to-primary-light">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Experience the Prestige Difference?
+            Ready to Experience The Auto Room?
           </h2>
           <p className="text-slate-300 mb-8 text-lg">
-            Visit our showroom or browse our inventory online. Your dream car awaits.
+            Visit us in Webster, NY or let us find the perfect car for you.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link

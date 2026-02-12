@@ -26,7 +26,7 @@ export default function CTASection() {
           </h2>
 
           <p className="text-lg text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
-            Visit our showroom today or schedule a private viewing. Our expert team is ready to help you find the perfect vehicle that matches your lifestyle and budget.
+            Visit The Auto Room or let us find the exact car you&apos;re looking for. Our hands-on team is ready to help you find the right vehicle — the straightforward way.
           </p>
 
           {/* CTA Buttons */}
@@ -50,9 +50,9 @@ export default function CTASection() {
           {/* Info Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
             {[
-              { icon: Phone, label: "Call Us", value: "(555) 123-4567" },
-              { icon: MapPin, label: "Visit Us", value: "Beverly Hills, CA" },
-              { icon: Calendar, label: "Hours", value: "Mon-Sat 9AM-8PM" },
+              { icon: Phone, label: "Call Us", value: "(585) 236-8019" },
+              { icon: MapPin, label: "Visit Us", value: "Webster, NY" },
+              { icon: Calendar, label: "Hours", value: "By Appointment" },
             ].map(({ icon: Icon, label, value }) => (
               <div key={label} className="flex items-center gap-3 p-4 bg-white/5 rounded-2xl border border-white/10">
                 <Icon size={20} className="text-accent-light shrink-0" />

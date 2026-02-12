@@ -45,7 +45,7 @@ export default function AboutPage() {
           <h1 className="text-4xl md:text-6xl font-bold text-white mt-4 mb-6">
             A Better Way to<br />Buy a Car
           </h1>
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-neutral-300 text-lg max-w-2xl mx-auto leading-relaxed">
             The Auto Room was created with a simple idea: the car buying experience should feel straightforward, respectful, and transparent. We focus on doing things the right way.
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((stat) => (
-              <div key={stat.label} className="bg-white rounded-2xl p-6 text-center shadow-xl border border-slate-100">
+              <div key={stat.label} className="bg-white rounded-2xl p-6 text-center shadow-xl border border-neutral-100">
                 <stat.icon size={28} className="mx-auto text-accent mb-3" />
                 <p className="text-3xl font-bold text-primary">{stat.value}</p>
                 <p className="text-xs text-muted mt-1">{stat.label}</p>
@@ -114,7 +114,7 @@ export default function AboutPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {values.map((value) => (
-              <div key={value.title} className="bg-white rounded-2xl p-8 border border-slate-100 text-center card-hover">
+              <div key={value.title} className="bg-white rounded-2xl p-8 border border-neutral-100 text-center card-hover">
                 <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-6">
                   <value.icon size={28} className="text-accent" />
                 </div>
@@ -161,7 +161,7 @@ export default function AboutPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Experience The Auto Room?
           </h2>
-          <p className="text-slate-300 mb-8 text-lg">
+          <p className="text-neutral-300 mb-8 text-lg">
             Visit us in Webster, NY or let us find the perfect car for you.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

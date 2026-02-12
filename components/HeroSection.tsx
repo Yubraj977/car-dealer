@@ -1,13 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { Search, ArrowRight, Shield, Award, Star, Clock, DollarSign, UserCheck } from "lucide-react";
+import { Search, ArrowRight, Shield, Clock, DollarSign, UserCheck } from "lucide-react";
 
 export default function HeroSection() {
-  const router = useRouter();
   const [carRequest, setCarRequest] = useState("");
 
   return (
@@ -24,30 +22,28 @@ export default function HeroSection() {
         <div className="hero-gradient absolute inset-0" />
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-float delay-200" />
-
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
             {/* Badge */}
-            <div className="animate-fade-in-up inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/10 mb-8">
-              <span className="w-2 h-2 bg-accent-light rounded-full animate-pulse" />
-              <span className="text-white/80 text-sm font-medium">Now Open in Webster, NY</span>
+            <div className="animate-fade-in-up inline-flex items-center gap-2 px-4 py-2 bg-accent/90 rounded-full mb-8">
+              <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+              <span className="text-white text-sm font-medium tracking-wide">Now Open in Webster, NY</span>
             </div>
 
             <h1 className="animate-fade-in-up delay-100 text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
               Tell Us What
               <br />
-              <span className="gradient-text">You Want.</span>
+              You Want.
               <br />
               We&apos;ll Find It.
             </h1>
 
-            <p className="animate-fade-in-up delay-200 text-lg text-slate-300 max-w-lg mb-8 leading-relaxed">
-              More than a dealership — we&apos;re your personal car-finding concierge. Tell us the car you want, and our team will track it down, negotiate the best price, and get it to you in Webster, NY.
+            <div className="animate-fade-in-up delay-150 w-16 h-1 bg-accent rounded-full mb-6" />
+
+            <p className="animate-fade-in-up delay-200 text-lg text-neutral-300 max-w-lg mb-8 leading-relaxed">
+              More than a dealership — we&apos;re your personal car-finding concierge. Tell us the car you want, and our team will track it down and get it to you in Webster, NY.
             </p>
 
             {/* Stats Row */}
@@ -59,7 +55,7 @@ export default function HeroSection() {
               ].map((stat) => (
                 <div key={stat.label}>
                   <p className="text-2xl md:text-3xl font-bold text-white">{stat.value}</p>
-                  <p className="text-sm text-slate-400">{stat.label}</p>
+                  <p className="text-sm text-neutral-400">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -68,7 +64,7 @@ export default function HeroSection() {
             <div className="animate-fade-in-up delay-400 flex flex-wrap items-center gap-4">
               <Link
                 href="/find-my-car"
-                className="btn-shimmer group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-accent to-accent-light text-white font-semibold rounded-2xl shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 transition-all"
+                className="btn-shimmer group flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-light text-white font-semibold rounded-2xl shadow-lg shadow-accent/25 hover:shadow-accent/40 transition-all"
               >
                 <Search size={18} />
                 Find My Car
@@ -76,7 +72,7 @@ export default function HeroSection() {
               </Link>
               <Link
                 href="/inventory"
-                className="group flex items-center gap-3 px-6 py-4 text-white font-medium rounded-2xl border border-white/20 hover:bg-white/10 transition-all"
+                className="group flex items-center gap-3 px-6 py-4 text-white font-medium rounded-2xl border border-white/25 hover:bg-white/10 transition-all"
               >
                 Browse Our Inventory
                 <ArrowRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -86,20 +82,20 @@ export default function HeroSection() {
 
           {/* Right - Car Finder Quick Card */}
           <div className="animate-fade-in-up delay-300 hidden lg:block">
-            <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl">
+            <div className="bg-white rounded-3xl p-8 shadow-2xl">
               {/* Header */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center">
-                  <UserCheck size={20} className="text-accent-light" />
+                <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+                  <UserCheck size={20} className="text-accent" />
                 </div>
                 <div>
-                  <h3 className="text-white font-semibold text-lg">Car Finder Concierge</h3>
-                  <p className="text-slate-400 text-sm">Tell us — we&apos;ll handle the rest</p>
+                  <h3 className="text-primary font-semibold text-lg">Car Finder Concierge</h3>
+                  <p className="text-muted text-sm">Tell us — we&apos;ll handle the rest</p>
                 </div>
               </div>
 
               {/* How it works mini */}
-              <div className="space-y-4 mb-6">
+              <div className="space-y-3 mb-6">
                 {[
                   { num: "1", text: "Tell us the car you want — any make, model, budget" },
                   { num: "2", text: "We search nationwide: auctions, dealers, private sellers" },
@@ -107,43 +103,43 @@ export default function HeroSection() {
                   { num: "4", text: "Your car is delivered to your doorstep" },
                 ].map((step) => (
                   <div key={step.num} className="flex items-start gap-3">
-                    <span className="w-7 h-7 rounded-full bg-accent/20 flex items-center justify-center text-accent-light text-xs font-bold shrink-0 mt-0.5">
+                    <span className="w-7 h-7 rounded-full bg-accent text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
                       {step.num}
                     </span>
-                    <p className="text-slate-300 text-sm leading-relaxed">{step.text}</p>
+                    <p className="text-muted text-sm leading-relaxed">{step.text}</p>
                   </div>
                 ))}
               </div>
 
               {/* Quick request */}
               <div className="mb-4">
-                <label className="text-slate-400 text-xs font-medium uppercase tracking-wider mb-1.5 block">What car are you looking for?</label>
+                <label className="text-muted text-xs font-medium uppercase tracking-wider mb-1.5 block">What car are you looking for?</label>
                 <input
                   type="text"
                   value={carRequest}
                   onChange={(e) => setCarRequest(e.target.value)}
                   placeholder='e.g. "2020 BMW M3 under $60K"'
-                  className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-accent/50 transition-colors"
+                  className="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3 text-primary text-sm placeholder:text-neutral-400 focus:outline-none focus:border-accent/50 transition-colors"
                 />
               </div>
 
               <Link
                 href="/find-my-car"
-                className="btn-shimmer w-full flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-accent to-accent-light text-white font-semibold rounded-xl shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all"
+                className="btn-shimmer w-full flex items-center justify-center gap-2 py-4 bg-accent hover:bg-accent-light text-white font-semibold rounded-xl shadow-lg shadow-accent/20 transition-all"
               >
                 <Search size={18} />
                 Start My Search — It&apos;s Free
               </Link>
 
               {/* Trust indicators */}
-              <div className="flex items-center justify-center gap-6 mt-6 pt-6 border-t border-white/10">
+              <div className="flex items-center justify-center gap-6 mt-5 pt-5 border-t border-neutral-100">
                 {[
                   { icon: Shield, label: "No Obligation" },
                   { icon: Clock, label: "24hr Updates" },
                   { icon: DollarSign, label: "Save Thousands" },
                 ].map(({ icon: Icon, label }) => (
-                  <div key={label} className="flex items-center gap-1.5 text-slate-400 text-xs">
-                    <Icon size={14} className="text-accent-light" />
+                  <div key={label} className="flex items-center gap-1.5 text-muted text-xs">
+                    <Icon size={14} className="text-accent" />
                     {label}
                   </div>
                 ))}

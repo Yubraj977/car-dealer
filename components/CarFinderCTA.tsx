@@ -30,7 +30,7 @@ export default function CarFinderCTA() {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Background accent */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl -tranneutral-y-1/2 tranneutral-x-1/2" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Main pitch */}
@@ -56,11 +56,11 @@ export default function CarFinderCTA() {
             <div className="flex flex-wrap items-center gap-4">
               <Link
                 href="/find-my-car"
-                className="btn-shimmer group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-accent to-accent-light text-white font-semibold rounded-2xl shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 transition-all"
+                className="btn-shimmer group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-accent to-accent-light text-white font-semibold rounded-2xl shadow-xl shadow-red-700/25 hover:shadow-red-700/40 transition-all"
               >
                 <Search size={18} />
                 Find My Car
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={18} className="group-hover:tranneutral-x-1 transition-transform" />
               </Link>
               <span className="text-sm text-muted">Free service — no obligation</span>
             </div>
@@ -70,7 +70,7 @@ export default function CarFinderCTA() {
           <div className="bg-gradient-to-br from-primary to-primary-light rounded-3xl p-10 text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full blur-2xl" />
             <h3 className="text-2xl font-bold mb-2">How We Work For You</h3>
-            <p className="text-slate-400 text-sm mb-8">A better way to buy a car</p>
+            <p className="text-neutral-400 text-sm mb-8">A better way to buy a car</p>
 
             <div className="grid grid-cols-2 gap-6 mb-8">
               {[
@@ -81,13 +81,13 @@ export default function CarFinderCTA() {
               ].map((stat) => (
                 <div key={stat.label} className="p-4 bg-white/5 rounded-2xl">
                   <p className="text-2xl font-bold text-accent-light">{stat.value}</p>
-                  <p className="text-xs text-slate-400 mt-1">{stat.label}</p>
+                  <p className="text-xs text-neutral-400 mt-1">{stat.label}</p>
                 </div>
               ))}
             </div>
 
             <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
-              <p className="text-sm text-slate-300 italic">
+              <p className="text-sm text-neutral-300 italic">
                 &ldquo;Buying a car should feel straightforward, comfortable, and enjoyable. That&apos;s why we created The Auto Room — to do things the right way.&rdquo;
               </p>
               <p className="text-xs text-accent-light mt-2 font-medium">— The Auto Room Team</p>
@@ -106,9 +106,9 @@ export default function CarFinderCTA() {
             <div key={step.title} className="relative group">
               {/* Connector line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-10 left-[60%] w-[80%] border-t-2 border-dashed border-slate-200 z-0" />
+                <div className="hidden lg:block absolute top-10 left-[60%] w-[80%] border-t-2 border-dashed border-neutral-200 z-0" />
               )}
-              <div className="relative z-10 bg-white border border-slate-100 rounded-2xl p-6 text-center card-hover">
+              <div className="relative z-10 bg-white border border-neutral-100 rounded-2xl p-6 text-center card-hover">
                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-accent group-hover:text-white transition-all">
                   <step.icon size={22} className="text-accent group-hover:text-white transition-colors" />
                 </div>

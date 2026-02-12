@@ -1,6 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -21,11 +22,33 @@ import {
   Clock,
   Car,
 } from "lucide-react";
-import { cars, formatPrice, formatMileage } from "@/lib/data";
+import { formatPrice, formatMileage } from "@/lib/types";
+import type { Car as CarType } from "@/lib/types";
 
 export default function VehicleDetailPage() {
   const params = useParams();
-  const car = cars.find((c) => c.id === params.id);
+  const [car, setCar] = useState<CarType | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!params.id) return;
+    fetch(`/api/cars/${params.id}`)
+      .then((res) => {
+        if (!res.ok) return null;
+        return res.json();
+      })
+      .then((data) => setCar(data))
+      .catch(() => setCar(null))
+      .finally(() => setLoading(false));
+  }, [params.id]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-muted">Loading...</p>
+      </div>
+    );
+  }
 
   if (!car) {
     return (
@@ -53,9 +76,9 @@ export default function VehicleDetailPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-neutral-50">
       {/* Back Navigation */}
-      <div className="bg-white border-b border-slate-100">
+      <div className="bg-white border-b border-neutral-100">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <Link href="/inventory" className="inline-flex items-center gap-2 text-sm text-muted hover:text-primary transition-colors">
             <ArrowLeft size={16} />
@@ -69,7 +92,7 @@ export default function VehicleDetailPage() {
           {/* Left - Images & Details */}
           <div className="lg:col-span-2 space-y-8">
             {/* Main Image */}
-            <div className="relative aspect-[16/10] rounded-3xl overflow-hidden bg-slate-200 shadow-xl">
+            <div className="relative aspect-[16/10] rounded-3xl overflow-hidden bg-neutral-200 shadow-xl">
               <Image
                 src={car.image}
                 alt={`${car.year} ${car.make} ${car.model}`}
@@ -83,10 +106,10 @@ export default function VehicleDetailPage() {
                 </div>
               )}
               <div className="absolute top-6 right-6 flex items-center gap-2">
-                <button className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-slate-600 hover:text-red-500 transition-colors shadow-lg">
+                <button className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-neutral-600 hover:text-red-500 transition-colors shadow-lg">
                   <Heart size={18} />
                 </button>
-                <button className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-slate-600 hover:text-primary transition-colors shadow-lg">
+                <button className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-neutral-600 hover:text-primary transition-colors shadow-lg">
                   <Share2 size={18} />
                 </button>
               </div>
@@ -96,7 +119,7 @@ export default function VehicleDetailPage() {
             {car.images.length > 1 && (
               <div className="flex gap-3 overflow-x-auto pb-2">
                 {car.images.map((img, i) => (
-                  <div key={i} className="relative w-32 h-24 rounded-xl overflow-hidden bg-slate-200 shrink-0 ring-2 ring-transparent hover:ring-accent/50 transition-all cursor-pointer">
+                  <div key={i} className="relative w-32 h-24 rounded-xl overflow-hidden bg-neutral-200 shrink-0 ring-2 ring-transparent hover:ring-accent/50 transition-all cursor-pointer">
                     <Image src={img} alt={`View ${i + 1}`} fill className="object-cover" />
                   </div>
                 ))}
@@ -104,18 +127,18 @@ export default function VehicleDetailPage() {
             )}
 
             {/* Description */}
-            <div className="bg-white rounded-2xl p-8 border border-slate-100">
+            <div className="bg-white rounded-2xl p-8 border border-neutral-100">
               <h2 className="text-xl font-bold text-primary mb-4">About This Vehicle</h2>
               <p className="text-muted leading-relaxed">{car.description}</p>
             </div>
 
             {/* Specifications */}
-            <div className="bg-white rounded-2xl p-8 border border-slate-100">
+            <div className="bg-white rounded-2xl p-8 border border-neutral-100">
               <h2 className="text-xl font-bold text-primary mb-6">Specifications</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {specs.map((spec) => (
                   <div key={spec.label} className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-neutral-50 flex items-center justify-center shrink-0">
                       <spec.icon size={18} className="text-accent" />
                     </div>
                     <div>
@@ -128,11 +151,11 @@ export default function VehicleDetailPage() {
             </div>
 
             {/* Features */}
-            <div className="bg-white rounded-2xl p-8 border border-slate-100">
+            <div className="bg-white rounded-2xl p-8 border border-neutral-100">
               <h2 className="text-xl font-bold text-primary mb-6">Key Features</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {car.features.map((feature) => (
-                  <div key={feature} className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl">
+                  <div key={feature} className="flex items-center gap-3 p-3 bg-neutral-50 rounded-xl">
                     <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
                     <span className="text-sm text-primary font-medium">{feature}</span>
                   </div>
@@ -144,7 +167,7 @@ export default function VehicleDetailPage() {
           {/* Right Sidebar - Pricing & Contact */}
           <div className="space-y-6">
             {/* Pricing Card */}
-            <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-lg sticky top-28">
+            <div className="bg-white rounded-2xl p-8 border border-neutral-100 shadow-lg sticky top-28">
               <div className="mb-6">
                 <p className="text-xs font-medium text-accent uppercase tracking-wider">{car.condition}</p>
                 <h1 className="text-2xl font-bold text-primary mt-1">
@@ -152,26 +175,26 @@ export default function VehicleDetailPage() {
                 </h1>
               </div>
 
-              <div className="mb-6 p-4 bg-slate-50 rounded-2xl">
+              <div className="mb-6 p-4 bg-neutral-50 rounded-2xl">
                 <p className="text-3xl font-bold text-primary">{formatPrice(car.price)}</p>
                 <p className="text-sm text-muted mt-1">Est. ${Math.round(car.price / 72).toLocaleString()}/mo with financing</p>
               </div>
 
               {/* Quick Specs */}
               <div className="grid grid-cols-2 gap-3 mb-6">
-                <div className="p-3 bg-slate-50 rounded-xl text-center">
+                <div className="p-3 bg-neutral-50 rounded-xl text-center">
                   <p className="text-xs text-muted">Mileage</p>
                   <p className="text-sm font-bold text-primary">{formatMileage(car.mileage)} mi</p>
                 </div>
-                <div className="p-3 bg-slate-50 rounded-xl text-center">
+                <div className="p-3 bg-neutral-50 rounded-xl text-center">
                   <p className="text-xs text-muted">Drivetrain</p>
                   <p className="text-sm font-bold text-primary">{car.drivetrain}</p>
                 </div>
-                <div className="p-3 bg-slate-50 rounded-xl text-center">
+                <div className="p-3 bg-neutral-50 rounded-xl text-center">
                   <p className="text-xs text-muted">Engine</p>
                   <p className="text-sm font-bold text-primary">{car.engine}</p>
                 </div>
-                <div className="p-3 bg-slate-50 rounded-xl text-center">
+                <div className="p-3 bg-neutral-50 rounded-xl text-center">
                   <p className="text-xs text-muted">Horsepower</p>
                   <p className="text-sm font-bold text-primary">{car.horsepower} HP</p>
                 </div>
@@ -179,25 +202,25 @@ export default function VehicleDetailPage() {
 
               {/* CTA Buttons */}
               <div className="space-y-3">
-                <button className="btn-shimmer w-full flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-accent to-accent-light text-white font-semibold rounded-xl shadow-lg shadow-amber-500/25">
+                <button className="btn-shimmer w-full flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-accent to-accent-light text-white font-semibold rounded-xl shadow-lg shadow-red-700/25">
                   <Calendar size={18} />
                   Schedule Test Drive
                 </button>
                 <a
                   href="tel:+15852368019"
-                  className="w-full flex items-center justify-center gap-2 py-4 border border-slate-200 text-primary font-semibold rounded-xl hover:bg-slate-50 transition-colors"
+                  className="w-full flex items-center justify-center gap-2 py-4 border border-neutral-200 text-primary font-semibold rounded-xl hover:bg-neutral-50 transition-colors"
                 >
                   <Phone size={18} />
                   Call (585) 236-8019
                 </a>
-                <button className="w-full flex items-center justify-center gap-2 py-4 border border-slate-200 text-primary font-semibold rounded-xl hover:bg-slate-50 transition-colors">
+                <button className="w-full flex items-center justify-center gap-2 py-4 border border-neutral-200 text-primary font-semibold rounded-xl hover:bg-neutral-50 transition-colors">
                   <Mail size={18} />
                   Email About This Vehicle
                 </button>
               </div>
 
               {/* Trust */}
-              <div className="mt-6 pt-6 border-t border-slate-100 space-y-3">
+              <div className="mt-6 pt-6 border-t border-neutral-100 space-y-3">
                 <div className="flex items-center gap-2 text-sm text-muted">
                   <Shield size={16} className="text-emerald-500" />
                   150-Point Inspection Completed
@@ -210,7 +233,7 @@ export default function VehicleDetailPage() {
             </div>
 
             {/* Dealer Info */}
-            <div className="bg-white rounded-2xl p-6 border border-slate-100">
+            <div className="bg-white rounded-2xl p-6 border border-neutral-100">
               <h3 className="font-semibold text-primary mb-4">The Auto Room</h3>
               <div className="space-y-3 text-sm text-muted">
                 <div className="flex items-center gap-2">

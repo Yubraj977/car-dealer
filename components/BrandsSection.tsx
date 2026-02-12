@@ -15,7 +15,7 @@ const brands = [
 
 export default function BrandsSection() {
   return (
-    <section className="py-16 bg-white border-y border-slate-100">
+    <section className="py-16 bg-white border-y border-neutral-100">
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-center text-sm text-muted font-medium uppercase tracking-wider mb-10">
           Trusted Brands We Carry
@@ -24,9 +24,9 @@ export default function BrandsSection() {
           {brands.map((brand) => (
             <div
               key={brand}
-              className="flex items-center justify-center h-16 px-4 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors cursor-pointer group"
+              className="flex items-center justify-center h-16 px-4 rounded-xl bg-neutral-50 hover:bg-neutral-100 transition-colors cursor-pointer group"
             >
-              <span className="text-sm font-semibold text-slate-400 group-hover:text-primary transition-colors tracking-wide">
+              <span className="text-sm font-semibold text-neutral-400 group-hover:text-primary transition-colors tracking-wide">
                 {brand}
               </span>
             </div>

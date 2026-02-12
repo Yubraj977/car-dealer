@@ -1,15 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 import CarCard from "./CarCard";
-import { cars } from "@/lib/data";
+import type { Car } from "@/lib/types";
 
 const filters = ["All", "New", "Used", "Certified Pre-Owned"];
 
 export default function FeaturedCars() {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [cars, setCars] = useState<Car[]>([]);
+
+  useEffect(() => {
+    fetch("/api/cars")
+      .then((res) => res.json())
+      .then((data) => setCars(data))
+      .catch(() => {});
+  }, []);
 
   const filteredCars =
     activeFilter === "All"
@@ -50,7 +58,7 @@ export default function FeaturedCars() {
               className={`px-5 py-2.5 text-sm font-medium rounded-xl transition-all ${
                 activeFilter === filter
                   ? "bg-primary text-white shadow-lg shadow-primary/20"
-                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
               }`}
             >
               {filter}

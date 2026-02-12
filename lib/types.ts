@@ -1,32 +1,38 @@
-import fs from "fs";
-import path from "path";
-import type { Car } from "./types";
-
-export type { Car } from "./types";
-export { conditions, formatPrice, formatMileage } from "./types";
-
-const DATA_PATH = path.join(process.cwd(), "data", "cars.json");
-
-export function getCars(): Car[] {
-  const raw = fs.readFileSync(DATA_PATH, "utf-8");
-  return JSON.parse(raw);
+export interface Car {
+  id: string;
+  make: string;
+  model: string;
+  year: number;
+  price: number;
+  mileage: number;
+  fuelType: string;
+  transmission: string;
+  bodyType: string;
+  color: string;
+  engine: string;
+  horsepower: number;
+  drivetrain: string;
+  image: string;
+  images: string[];
+  features: string[];
+  description: string;
+  badge?: "New Arrival" | "Hot Deal" | "Low Mileage" | "Certified";
+  condition: "New" | "Used" | "Certified Pre-Owned";
 }
 
-export function saveCars(cars: Car[]): void {
-  fs.writeFileSync(DATA_PATH, JSON.stringify(cars, null, 2));
+export const conditions = ["New", "Used", "Certified Pre-Owned"];
+
+export function formatPrice(price: number): string {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(price);
 }
 
-export function getCarById(id: string): Car | undefined {
-  return getCars().find((c) => c.id === id);
-}
-
-export function getDerivedData() {
-  const cars = getCars();
-  return {
-    makes: [...new Set(cars.map((c) => c.make))].sort(),
-    bodyTypes: [...new Set(cars.map((c) => c.bodyType))].sort(),
-    fuelTypes: [...new Set(cars.map((c) => c.fuelType))].sort(),
-  };
+export function formatMileage(mileage: number): string {
+  return new Intl.NumberFormat("en-US").format(mileage);
 }
 
 export const testimonials = [

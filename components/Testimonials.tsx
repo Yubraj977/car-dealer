@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
-import { testimonials } from "@/lib/data";
+import { testimonials } from "@/lib/types";
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);
@@ -31,7 +31,7 @@ export default function Testimonials() {
                 { value: "2,500+", label: "5-Star Reviews" },
                 { value: "98%", label: "Would Recommend" },
               ].map((stat) => (
-                <div key={stat.label} className="text-center p-4 bg-slate-50 rounded-2xl">
+                <div key={stat.label} className="text-center p-4 bg-neutral-50 rounded-2xl">
                   <p className="text-2xl font-bold text-primary">{stat.value}</p>
                   <p className="text-xs text-muted mt-1">{stat.label}</p>
                 </div>
@@ -53,7 +53,7 @@ export default function Testimonials() {
               </div>
 
               {/* Quote */}
-              <p className="text-lg leading-relaxed mb-8 text-slate-200">
+              <p className="text-lg leading-relaxed mb-8 text-neutral-200">
                 &ldquo;{testimonials[active].text}&rdquo;
               </p>
 
@@ -61,7 +61,7 @@ export default function Testimonials() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="font-semibold text-lg">{testimonials[active].name}</p>
-                  <p className="text-slate-400 text-sm">{testimonials[active].role}</p>
+                  <p className="text-neutral-400 text-sm">{testimonials[active].role}</p>
                   <p className="text-accent-light text-sm mt-1">Purchased: {testimonials[active].car}</p>
                 </div>
 

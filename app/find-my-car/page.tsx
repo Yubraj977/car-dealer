@@ -103,11 +103,11 @@ export default function FindMyCarPage() {
               <span className="gradient-text">We&apos;ll Find It.</span>
             </h1>
 
-            <p className="text-lg text-slate-300 max-w-xl leading-relaxed mb-8">
+            <p className="text-lg text-neutral-300 max-w-xl leading-relaxed mb-8">
               Stop endlessly scrolling listings. Give us your specs, and our nationwide network of contacts, auctions, and dealer relationships will track down the exact car you want — often at a better price than you&apos;d find on your own.
             </p>
 
-            <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400">
+            <div className="flex flex-wrap items-center gap-6 text-sm text-neutral-400">
               {[
                 { icon: Shield, text: "100% Free Service" },
                 { icon: Clock, text: "Avg. 48hr Find Time" },
@@ -145,7 +145,7 @@ export default function FindMyCarPage() {
                 </Link>
                 <button
                   onClick={() => { setSubmitted(false); setStep(1); setForm({ make: "", model: "", yearFrom: "", yearTo: "", budgetMin: "", budgetMax: "", colorPreference: "", mileageMax: "", transmission: "", fuelType: "", features: "", mustHaves: "", name: "", email: "", phone: "", timeline: "", notes: "" }); }}
-                  className="px-8 py-4 border border-slate-200 text-primary font-semibold rounded-2xl hover:bg-slate-50 transition-colors"
+                  className="px-8 py-4 border border-neutral-200 text-primary font-semibold rounded-2xl hover:bg-neutral-50 transition-colors"
                 >
                   Submit Another Request
                 </button>
@@ -161,7 +161,7 @@ export default function FindMyCarPage() {
                       key={label}
                       onClick={() => setStep(i + 1)}
                       className={`flex items-center gap-2 text-sm font-medium transition-colors ${
-                        step >= i + 1 ? "text-accent" : "text-slate-300"
+                        step >= i + 1 ? "text-accent" : "text-neutral-300"
                       }`}
                     >
                       <span
@@ -170,7 +170,7 @@ export default function FindMyCarPage() {
                             ? "bg-emerald-500 text-white"
                             : step === i + 1
                             ? "bg-accent text-white"
-                            : "bg-slate-100 text-slate-400"
+                            : "bg-neutral-100 text-neutral-400"
                         }`}
                       >
                         {step > i + 1 ? <CheckCircle2 size={16} /> : i + 1}
@@ -179,7 +179,7 @@ export default function FindMyCarPage() {
                     </button>
                   ))}
                 </div>
-                <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                <div className="h-2 bg-neutral-100 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-gradient-to-r from-accent to-accent-light rounded-full transition-all duration-500"
                     style={{ width: `${(step / 3) * 100}%` }}
@@ -204,7 +204,7 @@ export default function FindMyCarPage() {
                             value={form.make}
                             onChange={(e) => updateForm("make", e.target.value)}
                             placeholder="e.g. BMW, Toyota, Porsche, Any..."
-                            className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                            className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                           />
                         </div>
                         <div>
@@ -215,7 +215,7 @@ export default function FindMyCarPage() {
                             value={form.model}
                             onChange={(e) => updateForm("model", e.target.value)}
                             placeholder="e.g. M3 Competition, Camry, 911 GT3..."
-                            className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                            className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                           />
                         </div>
                       </div>
@@ -228,7 +228,7 @@ export default function FindMyCarPage() {
                             value={form.yearFrom}
                             onChange={(e) => updateForm("yearFrom", e.target.value)}
                             placeholder="e.g. 2018"
-                            className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                            className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                           />
                         </div>
                         <div>
@@ -238,7 +238,7 @@ export default function FindMyCarPage() {
                             value={form.yearTo}
                             onChange={(e) => updateForm("yearTo", e.target.value)}
                             placeholder="e.g. 2024"
-                            className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                            className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                           />
                         </div>
                       </div>
@@ -251,7 +251,7 @@ export default function FindMyCarPage() {
                             value={form.budgetMin}
                             onChange={(e) => updateForm("budgetMin", e.target.value)}
                             placeholder="e.g. $20,000"
-                            className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                            className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                           />
                         </div>
                         <div>
@@ -262,7 +262,7 @@ export default function FindMyCarPage() {
                             value={form.budgetMax}
                             onChange={(e) => updateForm("budgetMax", e.target.value)}
                             placeholder="e.g. $50,000"
-                            className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                            className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                           />
                         </div>
                       </div>
@@ -295,7 +295,7 @@ export default function FindMyCarPage() {
                             value={form.colorPreference}
                             onChange={(e) => updateForm("colorPreference", e.target.value)}
                             placeholder="e.g. Black, White, Any dark color..."
-                            className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                            className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                           />
                         </div>
                         <div>
@@ -305,7 +305,7 @@ export default function FindMyCarPage() {
                             value={form.mileageMax}
                             onChange={(e) => updateForm("mileageMax", e.target.value)}
                             placeholder="e.g. 50,000 miles"
-                            className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                            className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                           />
                         </div>
                       </div>
@@ -316,7 +316,7 @@ export default function FindMyCarPage() {
                           <select
                             value={form.transmission}
                             onChange={(e) => updateForm("transmission", e.target.value)}
-                            className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                            className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                           >
                             <option value="">No preference</option>
                             <option value="automatic">Automatic</option>
@@ -328,7 +328,7 @@ export default function FindMyCarPage() {
                           <select
                             value={form.fuelType}
                             onChange={(e) => updateForm("fuelType", e.target.value)}
-                            className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                            className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                           >
                             <option value="">No preference</option>
                             <option value="gasoline">Gasoline</option>
@@ -346,7 +346,7 @@ export default function FindMyCarPage() {
                           value={form.mustHaves}
                           onChange={(e) => updateForm("mustHaves", e.target.value)}
                           placeholder="e.g. Sunroof, Leather seats, Apple CarPlay, Navigation..."
-                          className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                          className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                         />
                       </div>
 
@@ -357,7 +357,7 @@ export default function FindMyCarPage() {
                           value={form.features}
                           onChange={(e) => updateForm("features", e.target.value)}
                           placeholder="e.g. Prefer single owner, no accidents, specific trim level..."
-                          className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all resize-none"
+                          className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all resize-none"
                         />
                       </div>
                     </div>
@@ -397,7 +397,7 @@ export default function FindMyCarPage() {
                             value={form.name}
                             onChange={(e) => updateForm("name", e.target.value)}
                             placeholder="John Doe"
-                            className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                            className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                           />
                         </div>
                         <div>
@@ -408,7 +408,7 @@ export default function FindMyCarPage() {
                             value={form.phone}
                             onChange={(e) => updateForm("phone", e.target.value)}
                             placeholder="(555) 000-0000"
-                            className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                            className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                           />
                         </div>
                       </div>
@@ -421,7 +421,7 @@ export default function FindMyCarPage() {
                           value={form.email}
                           onChange={(e) => updateForm("email", e.target.value)}
                           placeholder="john@example.com"
-                          className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                          className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                         />
                       </div>
 
@@ -430,7 +430,7 @@ export default function FindMyCarPage() {
                         <select
                           value={form.timeline}
                           onChange={(e) => updateForm("timeline", e.target.value)}
-                          className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                          className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                         >
                           <option value="">Select timeline</option>
                           <option value="asap">As soon as possible</option>
@@ -447,13 +447,13 @@ export default function FindMyCarPage() {
                           value={form.notes}
                           onChange={(e) => updateForm("notes", e.target.value)}
                           placeholder="Anything else we should know..."
-                          className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all resize-none"
+                          className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all resize-none"
                         />
                       </div>
                     </div>
 
                     {/* Trust Indicators */}
-                    <div className="mt-6 p-4 bg-slate-50 rounded-xl flex flex-wrap items-center gap-4 text-sm text-muted">
+                    <div className="mt-6 p-4 bg-neutral-50 rounded-xl flex flex-wrap items-center gap-4 text-sm text-muted">
                       <div className="flex items-center gap-1.5">
                         <Shield size={14} className="text-emerald-500" />
                         Free — No obligation
@@ -478,7 +478,7 @@ export default function FindMyCarPage() {
                       </button>
                       <button
                         type="submit"
-                        className="btn-shimmer flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-accent to-accent-light text-white font-semibold rounded-xl shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all"
+                        className="btn-shimmer flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-accent to-accent-light text-white font-semibold rounded-xl shadow-lg shadow-red-700/25 hover:shadow-red-700/40 transition-all"
                       >
                         <Send size={18} />
                         Submit Car Request
@@ -505,14 +505,14 @@ export default function FindMyCarPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {successStories.map((story) => (
-              <div key={story.name} className="bg-white rounded-2xl p-8 border border-slate-100 card-hover">
+              <div key={story.name} className="bg-white rounded-2xl p-8 border border-neutral-100 card-hover">
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={14} className="text-accent fill-accent" />
                   ))}
                 </div>
                 <p className="text-sm text-muted leading-relaxed mb-6 italic">&ldquo;{story.quote}&rdquo;</p>
-                <div className="border-t border-slate-100 pt-4">
+                <div className="border-t border-neutral-100 pt-4">
                   <p className="font-semibold text-primary text-sm">{story.name}</p>
                   <p className="text-xs text-muted">{story.location}</p>
                   <div className="mt-3 space-y-1">
@@ -555,8 +555,8 @@ export default function FindMyCarPage() {
               { icon: FileSearch, label: "Classic Cars" },
               { icon: Truck, label: "Trucks & SUVs" },
             ].map(({ icon: Icon, label }) => (
-              <div key={label} className="p-6 bg-slate-50 rounded-2xl text-center hover:bg-accent/5 transition-colors group cursor-pointer">
-                <Icon size={28} className="mx-auto mb-3 text-slate-400 group-hover:text-accent transition-colors" />
+              <div key={label} className="p-6 bg-neutral-50 rounded-2xl text-center hover:bg-accent/5 transition-colors group cursor-pointer">
+                <Icon size={28} className="mx-auto mb-3 text-neutral-400 group-hover:text-accent transition-colors" />
                 <p className="text-sm font-medium text-primary">{label}</p>
               </div>
             ))}
@@ -570,7 +570,7 @@ export default function FindMyCarPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Let Us Find Your Dream Car?
           </h2>
-          <p className="text-slate-300 mb-8 text-lg">
+          <p className="text-neutral-300 mb-8 text-lg">
             It&apos;s free, there&apos;s no obligation, and we typically find matches within 48 hours.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -28,7 +28,7 @@ export default function ContactPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <span className="text-accent-light text-sm font-semibold uppercase tracking-wider">Get in Touch</span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mt-4 mb-6">Contact Us</h1>
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto">
+          <p className="text-neutral-300 text-lg max-w-2xl mx-auto">
             Have a question or ready to schedule a test drive? Our team is here to help you every step of the way.
           </p>
         </div>
@@ -47,7 +47,7 @@ export default function ContactPage() {
               <a
                 key={label}
                 href={href}
-                className="bg-white rounded-2xl p-6 shadow-xl border border-slate-100 hover:shadow-2xl transition-shadow group"
+                className="bg-white rounded-2xl p-6 shadow-xl border border-neutral-100 hover:shadow-2xl transition-shadow group"
               >
                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
                   <Icon size={22} className="text-accent" />
@@ -66,7 +66,7 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Form */}
             <div className="lg:col-span-3">
-              <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-100 shadow-lg">
+              <div className="bg-white rounded-3xl p-8 md:p-10 border border-neutral-100 shadow-lg">
                 <div className="flex items-center gap-3 mb-8">
                   <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
                     <MessageSquare size={22} className="text-accent" />
@@ -96,7 +96,7 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="John Doe"
-                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                        className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                       />
                     </div>
                     <div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="john@example.com"
-                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                        className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                       />
                     </div>
                   </div>
@@ -123,7 +123,7 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="(555) 000-0000"
-                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                        className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                       />
                     </div>
                     <div>
@@ -133,7 +133,7 @@ export default function ContactPage() {
                       <select
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
+                        className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all"
                       >
                         <option value="">Select a topic</option>
                         <option value="test-drive">Schedule Test Drive</option>
@@ -155,12 +155,12 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell us how we can help you..."
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all resize-none"
+                      className="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl text-sm text-primary focus:outline-none focus:border-accent/50 focus:bg-white transition-all resize-none"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="btn-shimmer w-full flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-accent to-accent-light text-white font-semibold rounded-xl shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all"
+                    className="btn-shimmer w-full flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-accent to-accent-light text-white font-semibold rounded-xl shadow-lg shadow-red-700/25 hover:shadow-red-700/40 transition-all"
                   >
                     <Send size={18} />
                     Send Message
@@ -172,7 +172,7 @@ export default function ContactPage() {
             {/* Sidebar */}
             <div className="lg:col-span-2 space-y-6">
               {/* Map placeholder */}
-              <div className="bg-slate-200 rounded-3xl overflow-hidden aspect-[4/3] relative">
+              <div className="bg-neutral-200 rounded-3xl overflow-hidden aspect-[4/3] relative">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.5!2d-77.4258!3d43.2121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDEyJzQzLjYiTiA3N8KwMjUnMzMuMCJX!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
                   width="100%"
@@ -186,7 +186,7 @@ export default function ContactPage() {
               </div>
 
               {/* FAQ */}
-              <div className="bg-white rounded-3xl p-8 border border-slate-100">
+              <div className="bg-white rounded-3xl p-8 border border-neutral-100">
                 <h3 className="text-lg font-bold text-primary mb-6">Frequently Asked</h3>
                 <div className="space-y-4">
                   {[
@@ -195,7 +195,7 @@ export default function ContactPage() {
                     { q: "Do you accept trade-ins?", a: "Absolutely. Get an instant online appraisal or visit our showroom." },
                     { q: "Do you deliver vehicles?", a: "Free delivery within 100 miles, nationwide shipping available." },
                   ].map((faq) => (
-                    <div key={faq.q} className="p-4 bg-slate-50 rounded-xl">
+                    <div key={faq.q} className="p-4 bg-neutral-50 rounded-xl">
                       <p className="text-sm font-semibold text-primary">{faq.q}</p>
                       <p className="text-sm text-muted mt-1">{faq.a}</p>
                     </div>

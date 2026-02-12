@@ -15,7 +15,7 @@ import {
   Banknote,
   Phone,
 } from "lucide-react";
-import { formatPrice } from "@/lib/data";
+import { formatPrice } from "@/lib/types";
 
 export default function FinancePage() {
   const [loanAmount, setLoanAmount] = useState(80000);
@@ -81,7 +81,7 @@ export default function FinancePage() {
           <h1 className="text-4xl md:text-6xl font-bold text-white mt-4 mb-6">
             Drive Now,<br />Pay Smart
           </h1>
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto">
+          <p className="text-neutral-300 text-lg max-w-2xl mx-auto">
             Competitive rates, flexible terms, and a hassle-free process. Let us help you find the perfect financing solution.
           </p>
         </div>
@@ -90,7 +90,7 @@ export default function FinancePage() {
       {/* Calculator Section */}
       <section className="relative -mt-8 z-10 pb-24">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden">
+          <div className="bg-white rounded-3xl shadow-2xl border border-neutral-100 overflow-hidden">
             <div className="grid lg:grid-cols-5">
               {/* Calculator Inputs */}
               <div className="lg:col-span-3 p-8 md:p-10">
@@ -117,7 +117,7 @@ export default function FinancePage() {
                       step={5000}
                       value={loanAmount}
                       onChange={(e) => setLoanAmount(Number(e.target.value))}
-                      className="w-full h-2 bg-slate-200 rounded-full appearance-none cursor-pointer accent-amber-500"
+                      className="w-full h-2 bg-neutral-200 rounded-full appearance-none cursor-pointer accent-red-600"
                     />
                     <div className="flex justify-between text-xs text-muted mt-1">
                       <span>$20,000</span>
@@ -137,7 +137,7 @@ export default function FinancePage() {
                       step={1000}
                       value={downPayment}
                       onChange={(e) => setDownPayment(Number(e.target.value))}
-                      className="w-full h-2 bg-slate-200 rounded-full appearance-none cursor-pointer accent-amber-500"
+                      className="w-full h-2 bg-neutral-200 rounded-full appearance-none cursor-pointer accent-red-600"
                     />
                     <div className="flex justify-between text-xs text-muted mt-1">
                       <span>$0</span>
@@ -157,7 +157,7 @@ export default function FinancePage() {
                       step={0.1}
                       value={interestRate}
                       onChange={(e) => setInterestRate(Number(e.target.value))}
-                      className="w-full h-2 bg-slate-200 rounded-full appearance-none cursor-pointer accent-amber-500"
+                      className="w-full h-2 bg-neutral-200 rounded-full appearance-none cursor-pointer accent-red-600"
                     />
                     <div className="flex justify-between text-xs text-muted mt-1">
                       <span>0%</span>
@@ -175,7 +175,7 @@ export default function FinancePage() {
                           className={`py-3 text-sm font-medium rounded-xl transition-all ${
                             loanTerm === term
                               ? "bg-primary text-white shadow-lg"
-                              : "bg-slate-50 text-slate-600 hover:bg-slate-100"
+                              : "bg-neutral-50 text-neutral-600 hover:bg-neutral-100"
                           }`}
                         >
                           {term} mo
@@ -188,23 +188,23 @@ export default function FinancePage() {
 
               {/* Results */}
               <div className="lg:col-span-2 bg-gradient-to-br from-primary to-primary-light p-8 md:p-10 text-white flex flex-col justify-center">
-                <p className="text-sm text-slate-400 uppercase tracking-wider mb-2">Estimated Monthly Payment</p>
+                <p className="text-sm text-neutral-400 uppercase tracking-wider mb-2">Estimated Monthly Payment</p>
                 <p className="text-5xl font-bold mb-8">
                   {formatPrice(Math.round(monthlyPayment))}
-                  <span className="text-lg font-normal text-slate-400">/mo</span>
+                  <span className="text-lg font-normal text-neutral-400">/mo</span>
                 </p>
 
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center justify-between py-3 border-b border-white/10">
-                    <span className="text-slate-400 text-sm">Loan Amount</span>
+                    <span className="text-neutral-400 text-sm">Loan Amount</span>
                     <span className="font-semibold">{formatPrice(principal)}</span>
                   </div>
                   <div className="flex items-center justify-between py-3 border-b border-white/10">
-                    <span className="text-slate-400 text-sm">Total Interest</span>
+                    <span className="text-neutral-400 text-sm">Total Interest</span>
                     <span className="font-semibold">{formatPrice(Math.round(totalInterest))}</span>
                   </div>
                   <div className="flex items-center justify-between py-3">
-                    <span className="text-slate-400 text-sm">Total Cost</span>
+                    <span className="text-neutral-400 text-sm">Total Cost</span>
                     <span className="font-semibold text-accent-light">{formatPrice(Math.round(totalPayment))}</span>
                   </div>
                 </div>
@@ -233,10 +233,10 @@ export default function FinancePage() {
             {steps.map((step, index) => (
               <div key={step.step} className="relative">
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-12 left-[60%] w-[80%] border-t-2 border-dashed border-slate-200" />
+                  <div className="hidden lg:block absolute top-12 left-[60%] w-[80%] border-t-2 border-dashed border-neutral-200" />
                 )}
-                <div className="bg-white rounded-2xl p-8 border border-slate-100 text-center relative card-hover">
-                  <span className="text-5xl font-bold text-slate-100 absolute top-4 right-6">{step.step}</span>
+                <div className="bg-white rounded-2xl p-8 border border-neutral-100 text-center relative card-hover">
+                  <span className="text-5xl font-bold text-neutral-100 absolute top-4 right-6">{step.step}</span>
                   <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-6">
                     <step.icon size={26} className="text-accent" />
                   </div>
@@ -263,7 +263,7 @@ export default function FinancePage() {
               </p>
               <div className="grid grid-cols-1 gap-3">
                 {benefits.map((benefit) => (
-                  <div key={benefit} className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl">
+                  <div key={benefit} className="flex items-center gap-3 p-3 bg-neutral-50 rounded-xl">
                     <CheckCircle2 size={18} className="text-emerald-500 shrink-0" />
                     <span className="text-sm text-primary font-medium">{benefit}</span>
                   </div>
@@ -272,7 +272,7 @@ export default function FinancePage() {
             </div>
             <div className="bg-gradient-to-br from-primary to-primary-light rounded-3xl p-10 text-white">
               <h3 className="text-2xl font-bold mb-4">Get Pre-Approved Today</h3>
-              <p className="text-slate-300 mb-6 leading-relaxed">
+              <p className="text-neutral-300 mb-6 leading-relaxed">
                 Take the first step toward your new vehicle. Our quick pre-approval process won&apos;t affect your credit score.
               </p>
               <div className="space-y-4 mb-8">
@@ -316,7 +316,7 @@ export default function FinancePage() {
             </Link>
             <a
               href="tel:+15852368019"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-semibold rounded-2xl border border-slate-200 hover:bg-slate-50 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-semibold rounded-2xl border border-neutral-200 hover:bg-neutral-50 transition-all"
             >
               <Phone size={18} />
               (585) 236-8019

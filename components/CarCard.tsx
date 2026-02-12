@@ -1,21 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Fuel, Gauge, Settings2, ArrowRight } from "lucide-react";
-import { Car, formatPrice, formatMileage } from "@/lib/data";
+import { Car, formatPrice, formatMileage } from "@/lib/types";
 
 const badgeColors: Record<string, string> = {
-  "New Arrival": "bg-blue-500",
-  "Hot Deal": "bg-red-500",
-  "Low Mileage": "bg-emerald-500",
-  "Certified": "bg-purple-500",
+  "New Arrival": "bg-red-700",
+  "Hot Deal": "bg-red-600",
+  "Low Mileage": "bg-neutral-700",
+  "Certified": "bg-neutral-800",
 };
 
 export default function CarCard({ car }: { car: Car }) {
   return (
     <Link href={`/inventory/${car.id}`} className="group block">
-      <div className="card-hover bg-white rounded-2xl overflow-hidden border border-slate-100">
+      <div className="card-hover bg-white rounded-2xl overflow-hidden border border-neutral-100">
         {/* Image */}
-        <div className="relative h-56 overflow-hidden bg-slate-100">
+        <div className="relative h-56 overflow-hidden bg-neutral-100">
           <Image
             src={car.image}
             alt={`${car.year} ${car.make} ${car.model}`}
@@ -34,12 +34,12 @@ export default function CarCard({ car }: { car: Car }) {
           )}
 
           {/* Condition */}
-          <div className="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-slate-700 text-xs font-medium rounded-full">
+          <div className="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-neutral-700 text-xs font-medium rounded-full">
             {car.condition}
           </div>
 
           {/* View Details on Hover */}
-          <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+          <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 tranneutral-y-4 group-hover:tranneutral-y-0 transition-all duration-300">
             <span className="inline-flex items-center gap-1.5 text-white text-sm font-medium">
               View Details <ArrowRight size={14} />
             </span>
@@ -59,27 +59,27 @@ export default function CarCard({ car }: { car: Car }) {
           {/* Specs */}
           <div className="flex items-center gap-4 mb-4 text-sm text-muted">
             <span className="flex items-center gap-1.5">
-              <Gauge size={14} className="text-slate-400" />
+              <Gauge size={14} className="text-neutral-400" />
               {formatMileage(car.mileage)} mi
             </span>
             <span className="flex items-center gap-1.5">
-              <Fuel size={14} className="text-slate-400" />
+              <Fuel size={14} className="text-neutral-400" />
               {car.fuelType}
             </span>
             <span className="flex items-center gap-1.5">
-              <Settings2 size={14} className="text-slate-400" />
+              <Settings2 size={14} className="text-neutral-400" />
               {car.transmission}
             </span>
           </div>
 
           {/* Divider */}
-          <div className="border-t border-slate-100 pt-4">
+          <div className="border-t border-neutral-100 pt-4">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-2xl font-bold text-primary">{formatPrice(car.price)}</p>
                 <p className="text-xs text-muted">Est. ${Math.round(car.price / 72).toLocaleString()}/mo</p>
               </div>
-              <div className="w-10 h-10 rounded-xl bg-slate-50 group-hover:bg-accent group-hover:text-white text-slate-400 flex items-center justify-center transition-all">
+              <div className="w-10 h-10 rounded-xl bg-neutral-50 group-hover:bg-accent group-hover:text-white text-neutral-400 flex items-center justify-center transition-all">
                 <ArrowRight size={18} />
               </div>
             </div>

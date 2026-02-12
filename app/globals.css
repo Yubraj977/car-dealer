@@ -2,23 +2,23 @@
 
 @theme inline {
   --color-background: #ffffff;
-  --color-foreground: #0f172a;
-  --color-primary: #0f172a;
-  --color-primary-light: #1e3a5f;
-  --color-accent: #d97706;
-  --color-accent-light: #f59e0b;
-  --color-muted: #64748b;
-  --color-border: #e2e8f0;
+  --color-foreground: #161616;
+  --color-primary: #161616;
+  --color-primary-light: #2a2a2a;
+  --color-accent: #D12E24;
+  --color-accent-light: #E8453B;
+  --color-muted: #5e5e5e;
+  --color-border: #e2e2e2;
   --color-card: #ffffff;
-  --color-card-hover: #f8fafc;
-  --color-section-alt: #f1f5f9;
+  --color-card-hover: #f9f9f9;
+  --color-section-alt: #f6f6f6;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
   background: #ffffff;
-  color: #0f172a;
+  color: #161616;
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
@@ -32,14 +32,14 @@ html {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #f6f6f6;
 }
 ::-webkit-scrollbar-thumb {
-  background: #94a3b8;
+  background: #a9a9a9;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: #5e5e5e;
 }
 
 /* Animations */
@@ -140,7 +140,7 @@ html {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #d97706, #f59e0b, #fbbf24);
+  background: linear-gradient(135deg, #D12E24, #E8453B, #ff6b5e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -165,12 +165,13 @@ html {
 
 /* Hero overlay gradient */
 .hero-gradient {
-  background: linear-gradient(
-    135deg,
-    rgba(15, 23, 42, 0.95) 0%,
-    rgba(30, 58, 95, 0.85) 50%,
-    rgba(15, 23, 42, 0.9) 100%
-  );
+  background:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.6) 55%,
+      rgba(0, 0, 0, 0.35) 100%
+    );
 }
 
 /* Shimmer button */
@@ -201,6 +202,6 @@ html {
 .section-divider {
   width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, #d97706, #f59e0b);
+  background: linear-gradient(90deg, #D12E24, #E8453B);
   border-radius: 2px;
 }

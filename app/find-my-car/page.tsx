@@ -78,9 +78,44 @@ export default function FindMyCarPage() {
     setForm((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    try {
+      await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "car-finder",
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          carDetails: {
+            make: form.make,
+            model: form.model,
+            yearFrom: form.yearFrom,
+            yearTo: form.yearTo,
+            budgetMin: form.budgetMin,
+            budgetMax: form.budgetMax,
+            colorPreference: form.colorPreference,
+            mileageMax: form.mileageMax,
+            transmission: form.transmission,
+            fuelType: form.fuelType,
+            mustHaves: form.mustHaves,
+            features: form.features,
+            timeline: form.timeline,
+            notes: form.notes,
+          },
+        }),
+      });
+      setSubmitted(true);
+    } catch {
+      // silently fail for user
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -481,7 +516,7 @@ export default function FindMyCarPage() {
                         className="btn-shimmer flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-accent to-accent-light text-white font-semibold rounded-xl shadow-lg shadow-red-700/25 hover:shadow-red-700/40 transition-all"
                       >
                         <Send size={18} />
-                        Submit Car Request
+                        {submitting ? "Submitting..." : "Submit Car Request"}
                       </button>
                     </div>
                   </div>

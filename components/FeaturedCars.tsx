@@ -25,32 +25,30 @@ export default function FeaturedCars() {
       : cars.filter((c) => c.condition === activeFilter).slice(0, 8);
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-          <div>
-            <div className="flex items-center gap-2 mb-3">
-              <Sparkles size={18} className="text-accent" />
-              <span className="text-accent text-sm font-semibold uppercase tracking-wider">Our Collection</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary">
-              Featured Vehicles
-            </h2>
-            <p className="text-muted mt-3 text-lg max-w-xl">
-              Hand-picked premium vehicles, each inspected and certified to meet our exacting standards.
-            </p>
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <Sparkles size={18} className="text-accent" />
+            <span className="text-accent text-sm font-semibold uppercase tracking-wider">Our Collection</span>
           </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-primary">
+            Featured Vehicles
+          </h2>
+          <p className="text-muted mt-3 text-lg max-w-xl mx-auto">
+            Hand-picked premium vehicles, each inspected and certified to meet our exacting standards.
+          </p>
           <Link
             href="/inventory"
-            className="mt-6 md:mt-0 inline-flex items-center gap-2 text-accent font-semibold hover:gap-3 transition-all"
+            className="mt-4 inline-flex items-center gap-2 text-accent font-semibold hover:gap-3 transition-all"
           >
             View All Inventory <ArrowRight size={18} />
           </Link>
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center gap-2 mb-10">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
           {filters.map((filter) => (
             <button
               key={filter}

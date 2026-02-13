@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="90" fill="none" stroke="currentColor" stroke-width="8"/>
+  <line x1="100" y1="10" x2="100" y2="190" stroke="currentColor" stroke-width="6"/>
+  <line x1="10" y1="100" x2="190" y2="100" stroke="currentColor" stroke-width="6"/>
+  <path d="M100 10 A90 90 0 0 1 190 100 L100 100 Z" fill="currentColor" opacity="0.3"/>
+  <path d="M10 100 A90 90 0 0 1 100 190 L100 100 Z" fill="currentColor" opacity="0.3"/>
+</svg>

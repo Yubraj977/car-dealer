@@ -20,6 +20,40 @@ export interface Car {
   condition: "New" | "Used" | "Certified Pre-Owned";
 }
 
+export interface Lead {
+  id: string;
+  type: "contact" | "car-finder";
+  name: string;
+  email: string;
+  phone: string;
+  message?: string;
+  carDetails?: Record<string, string>;
+  status: "new" | "contacted" | "closed";
+  createdAt: string;
+}
+
+export interface Testimonial {
+  id: string;
+  name: string;
+  role: string;
+  text: string;
+  rating: number;
+  car: string;
+}
+
+export interface Settings {
+  phone: string;
+  email: string;
+  address: string;
+  hours: string;
+  socialLinks: {
+    facebook: string;
+    instagram: string;
+    twitter: string;
+    youtube: string;
+  };
+}
+
 export const conditions = ["New", "Used", "Certified Pre-Owned"];
 
 export function formatPrice(price: number): string {
@@ -34,38 +68,3 @@ export function formatPrice(price: number): string {
 export function formatMileage(mileage: number): string {
   return new Intl.NumberFormat("en-US").format(mileage);
 }
-
-export const testimonials = [
-  {
-    id: 1,
-    name: "James Richardson",
-    role: "Business Owner",
-    text: "Absolutely outstanding experience. The team at Prestige Motors found me the perfect S-Class within my budget. Their attention to detail and customer service is unmatched. I've already referred three friends.",
-    rating: 5,
-    car: "Mercedes-Benz S-Class",
-  },
-  {
-    id: 2,
-    name: "Sarah Chen",
-    role: "Tech Executive",
-    text: "I was skeptical about buying a luxury car online, but Prestige Motors made the process seamless. From video walkarounds to doorstep delivery, they went above and beyond. My new Porsche 911 is a dream.",
-    rating: 5,
-    car: "Porsche 911",
-  },
-  {
-    id: 3,
-    name: "Michael Torres",
-    role: "Physician",
-    text: "Third purchase from Prestige Motors and they never disappoint. Their financing options are competitive, the vehicles are impeccably maintained, and the staff truly cares about finding the right match.",
-    rating: 5,
-    car: "BMW X7",
-  },
-  {
-    id: 4,
-    name: "Emily Watson",
-    role: "Attorney",
-    text: "The certified pre-owned process gave me complete peace of mind. Every detail was transparent, from vehicle history to pricing. Best car buying experience I've ever had. Highly recommend!",
-    rating: 5,
-    car: "Audi RS e-tron GT",
-  },
-];

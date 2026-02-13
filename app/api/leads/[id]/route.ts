@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getCars, saveCars } from "@/lib/data";
+import { getLeads, saveLeads } from "@/lib/data";
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "yubraj";
 
@@ -9,15 +9,19 @@ function isAuthorized(req: NextRequest): boolean {
 }
 
 export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
-  const cars = getCars();
-  const car = cars.find((c) => c.id === id);
-
-  if (!car) {
-    return NextResponse.json({ error: "Car not found" }, { status: 404 });
+  if (!isAuthorized(req)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  return NextResponse.json(car);
+  const { id } = await params;
+  const leads = getLeads();
+  const lead = leads.find((l) => l.id === id);
+
+  if (!lead) {
+    return NextResponse.json({ error: "Lead not found" }, { status: 404 });
+  }
+
+  return NextResponse.json(lead);
 }
 
 export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -27,17 +31,17 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
 
   const { id } = await params;
   const body = await req.json();
-  const cars = getCars();
-  const index = cars.findIndex((c) => c.id === id);
+  const leads = getLeads();
+  const index = leads.findIndex((l) => l.id === id);
 
   if (index === -1) {
-    return NextResponse.json({ error: "Car not found" }, { status: 404 });
+    return NextResponse.json({ error: "Lead not found" }, { status: 404 });
   }
 
-  cars[index] = { ...cars[index], ...body, id };
-  saveCars(cars);
+  leads[index] = { ...leads[index], ...body, id };
+  saveLeads(leads);
 
-  return NextResponse.json(cars[index]);
+  return NextResponse.json(leads[index]);
 }
 
 export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -46,15 +50,15 @@ export async function DELETE(req: NextRequest, { params }: { params: Promise<{ i
   }
 
   const { id } = await params;
-  const cars = getCars();
-  const index = cars.findIndex((c) => c.id === id);
+  const leads = getLeads();
+  const index = leads.findIndex((l) => l.id === id);
 
   if (index === -1) {
-    return NextResponse.json({ error: "Car not found" }, { status: 404 });
+    return NextResponse.json({ error: "Lead not found" }, { status: 404 });
   }
 
-  const deleted = cars.splice(index, 1)[0];
-  saveCars(cars);
+  const deleted = leads.splice(index, 1)[0];
+  saveLeads(leads);
 
   return NextResponse.json(deleted);
 }
